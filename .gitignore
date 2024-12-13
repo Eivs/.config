@@ -1,0 +1,17 @@
+.DS_Store
+/**/.DS_Store
+/*
+/**/.git
+/nvim/.git
+!starship.toml
+!vim
+!htop
+!tmux
+!alacritty
+!bat
+!fish
+!neofetch
+!nvim
+!mc
+!zellij
+!.gitignore
