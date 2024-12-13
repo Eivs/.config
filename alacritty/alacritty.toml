@@ -1,0 +1,315 @@
+# config docs https://alacritty.org/config-alacritty.html
+# ~/.config/alacritty/alacritty.toml
+
+[general]
+import = []
+working_directory = "None"
+live_config_reload = true
+ipc_socket = true
+
+[env]
+TERM="xterm-256color"
+COLORTERM="24bit"
+
+[window]
+decorations = "Full"
+opacity = 0.8
+blur = true
+startup_mode = "Windowed"
+dynamic_title = true
+resize_increments = true
+title = "Alacritty"
+dynamic_padding = true
+decorations_theme_variant = "Dark"
+# resize_increments = false
+option_as_alt = "Both"
+
+[window.dimensions]
+columns = 80
+lines = 25
+
+[window.padding]
+x = 10
+y = 10
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black =   "#686868"
+red =     "#ff5c57"
+green =   "#5af78e"
+yellow =  "#f3f99d"
+blue =    "#57c7ff"
+magenta = "#ff6ac1"
+cyan =    "#9aedfe"
+white =   "#f1f1f0"
+
+[colors.cursor]
+cursor = "#e9e9e9"
+text = "#282935"
+
+[colors.normal]
+black =   "#282a36"
+red =     "#ff5c57"
+green =   "#5af78e"
+yellow =  "#f3f99d"
+blue =    "#57c7ff"
+magenta = "#ff6ac1"
+cyan =    "#9aedfe"
+white =   "#f1f1f0"
+
+[colors.primary]
+background = "#282935"
+foreground = "#efefeb"
+
+[colors.search.focused_match]
+background = "#9abace"
+foreground = "#282935"
+
+[colors.search.matches]
+background = "#ffff00"
+foreground = "#282935"
+
+
+[colors.selection]
+background = "#9abace"
+text = "#000000"
+
+[colors.line_indicator]
+foreground = "#282935"
+background ="#ffff00"
+
+[colors.footer_bar]
+background = "#9abace"
+foreground = "#000000"
+
+[colors.hints.start]
+foreground = "#181818"
+background = "#f4bf75"
+
+[colors.hints.end]
+foreground = "#181818"
+background = "#ac4242"
+
+[cursor]
+vi_mode_style = "None"
+blink_interval = 750
+blink_timeout = 5
+unfocused_hollow = true
+thickness = 0.15
+
+[cursor.style]
+shape = "Beam"
+blinking = "On"
+
+[font]
+size = 14.0
+builtin_box_drawing = true
+
+[font.normal]
+family = "RobotoMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "RobotoMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "RobotoMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "RobotoMono Nerd Font"
+style = "Bold Italic"
+
+[font.offset]
+x = 0
+y = 0
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[scrolling]
+history = 10000
+multiplier = 4
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[bell]
+animation = "Ease"
+duration = 100
+color = "#414458"
+command = "none"
+
+[terminal]
+# shell = { program = "<string>", args = ["<string>",] }
+osc52 = "OnlyCopy"
+
+[mouse]
+hide_when_typing = false
+bindings = [
+	{ mouse = "Left", mods = "Control", action = "Copy" },
+	{ mouse = "Right", mods = "Control", action = "Paste" },
+]
+
+[keyboard]
+bindings = [
+    { key = "Paste", action = "Paste" },
+    { key = "Copy", action = "Copy" },
+    { key = "L", mods = "Control", action = "ClearLogNotice" },
+    { key = "Paste", mode = "Vi|Search", action = "Paste" },
+    { key = "L", mods = "Control", mode = "~Vi|~Search", chars = "\u000c" },
+    { key = "PageUp", mods = "Shift", mode = "~Alt", action = "ScrollPageUp" },
+    { key = "PageDown", mods = "Shift", mode = "~Alt", action = "ScrollPageDown" },
+    { key = "Home", mods = "Shift", mode = "~Alt", action = "ScrollToTop" },
+    { key = "End", mods = "Shift", mode = "~Alt", action = "ScrollToBottom" },
+
+    # Vi Mode
+    { key = "Space", mods = "Shift|Control", mode = "~Search", action = "ToggleViMode" },
+    { key = "Space", mods = "Shift|Control", mode = "Vi|~Search", action = "ScrollToBottom" },
+    { key = "Escape", mode = "Vi|~Search", action = "ClearSelection" },
+    { key = "I", mode = "Vi|~Search", action = "ToggleViMode" },
+    { key = "I", mode = "Vi|~Search", action = "ScrollToBottom" },
+    { key = "C", mods = "Control", mode = "Vi|~Search", action = "ToggleViMode" },
+    { key = "Y", mods = "Control", mode = "Vi|~Search", action = "ScrollLineUp" },
+    { key = "E", mods = "Control", mode = "Vi|~Search", action = "ScrollLineDown" },
+    { key = "G", mode = "Vi|~Search", action = "ScrollToTop" },
+    { key = "G", mods = "Shift", mode = "Vi|~Search", action = "ScrollToBottom" },
+    { key = "B", mods = "Control", mode = "Vi|~Search", action = "ScrollPageUp" },
+    { key = "F", mods = "Control", mode = "Vi|~Search", action = "ScrollPageDown" },
+    { key = "U", mods = "Control", mode = "Vi|~Search", action = "ScrollHalfPageUp" },
+    { key = "D", mods = "Control", mode = "Vi|~Search", action = "ScrollHalfPageDown" },
+    { key = "Y", mode = "Vi|~Search", action = "Copy" },
+    { key = "Y", mode = "Vi|~Search", action = "ClearSelection" },
+    { key = "Copy", mode = "Vi|~Search", action = "ClearSelection" },
+    { key = "V", mode = "Vi|~Search", action = "ToggleNormalSelection" },
+    { key = "V", mods = "Shift", mode = "Vi|~Search", action = "ToggleLineSelection" },
+    { key = "V", mods = "Control", mode = "Vi|~Search", action = "ToggleBlockSelection" },
+    { key = "V", mods = "Alt", mode = "Vi|~Search", action = "ToggleSemanticSelection" },
+    { key = "Enter", mode = "Vi|~Search", action = "Open" },
+    { key = "Z", mode = "Vi|~Search", action = "CenterAroundViCursor" },
+    { key = "F", mode = "Vi|~Search", action = "InlineSearchForward" },
+    { key = "F", mods = "Shift", mode = "Vi|~Search", action = "InlineSearchBackward" },
+    { key = "T", mode = "Vi|~Search", action = "InlineSearchForwardShort" },
+    { key = "T", mods = "Shift", mode = "Vi|~Search", action = "InlineSearchBackwardShort" },
+    { key = ";", mode = "Vi|~Search", action = "InlineSearchNext" },
+    { key = ",", mode = "Vi|~Search", action = "InlineSearchPrevious" },
+    { key = "K", mode = "Vi|~Search", action = "Up" },
+    { key = "J", mode = "Vi|~Search", action = "Down" },
+    { key = "H", mode = "Vi|~Search", action = "Left" },
+    { key = "L", mode = "Vi|~Search", action = "Right" },
+    { key = "ArrowUp", mode = "Vi|~Search", action = "Up" },
+    { key = "ArrowDown", mode = "Vi|~Search", action = "Down" },
+    { key = "ArrowLeft", mode = "Vi|~Search", action = "Left" },
+    { key = "ArrowRight", mode = "Vi|~Search", action = "Right" },
+    { key = "0", mode = "Vi|~Search", action = "First" },
+    { key = "$", mods = "Shift", mode = "Vi|~Search", action = "Last" },
+    { key = "Home", mode = "Vi|~Search", action = "First" },
+    { key = "End", mode = "Vi|~Search", action = "Last" },
+    { key = "^", mods = "Shift", mode = "Vi|~Search", action = "FirstOccupied" },
+    { key = "H", mods = "Shift", mode = "Vi|~Search", action = "High" },
+    { key = "M", mods = "Shift", mode = "Vi|~Search", action = "Middle" },
+    { key = "L", mods = "Shift", mode = "Vi|~Search", action = "Low" },
+    { key = "B", mode = "Vi|~Search", action = "SemanticLeft" },
+    { key = "W", mode = "Vi|~Search", action = "SemanticRight" },
+    { key = "E", mode = "Vi|~Search", action = "SemanticRightEnd" },
+    { key = "B", mods = "Shift", mode = "Vi|~Search", action = "WordLeft" },
+    { key = "W", mods = "Shift", mode = "Vi|~Search", action = "WordRight" },
+    { key = "E", mods = "Shift", mode = "Vi|~Search", action = "WordRightEnd" },
+    { key = "%", mods = "Shift", mode = "Vi|~Search", action = "Bracket" },
+    { key = "/", mode = "Vi|~Search", action = "SearchForward" },
+    { key = "?", mods = "Shift", mode = "Vi|~Search", action = "SearchBackward" },
+    { key = "N", mode = "Vi|~Search", action = "SearchNext" },
+    { key = "N", mods = "Shift", mode = "Vi|~Search", action = "SearchPrevious" },
+
+    # Search Mode 
+    { key = "Enter", mode = "Search|Vi", action = "SearchConfirm" },
+    { key = "Escape", mode = "Search", action = "SearchCancel" },
+    { key = "C", mods = "Control", mode = "Search", action = "SearchCancel" },
+    { key = "U", mods = "Control", mode = "Search", action = "SearchClear" },
+    { key = "W", mods = "Control", mode = "Search", action = "SearchDeleteWord" },
+    { key = "P", mods = "Control", mode = "Search", action = "SearchHistoryPrevious" },
+    { key = "N", mods = "Control", mode = "Search", action = "SearchHistoryNext" },
+    { key = "ArrowUp", mode = "Search", action = "SearchHistoryPrevious" },
+    { key = "ArrowDown", mode = "Search", action = "SearchHistoryNext" },
+    { key = "Enter", mode = "Search|~Vi", action = "SearchFocusNext" },
+
+ 	# Windows, Linux, and BSD only
+    # { key = "V", mods = "Control|Shift", mode = "~Vi", action = "Paste" },
+    # { key = "V", mods = "Control|Shift", mode = "Vi|Search", action = "Paste" },
+    # { key = "C", mods = "Control|Shift", action = "Copy" },
+    # { key = "F", mods = "Control|Shift", mode = "~Search", action = "SearchForward" },
+    # { key = "B", mods = "Control|Shift", mode = "~Search", action = "SearchBackward" },
+    # { key = "C", mods = "Control|Shift", mode = "Vi|~Search", action = "ClearSelection" },
+    # { key = "Insert", mods = "Shift", action = "PasteSelection" },
+    # { key = "0", mods = "Control", action = "ResetFontSize" },
+    # { key = "=", mods = "Control", action = "IncreaseFontSize" },
+    # { key = "+", mods = "Control", action = "IncreaseFontSize" },
+    # { key = "NumpadAdd", mods = "Control", action = "IncreaseFontSize" },
+    # { key = "-", mods = "Control", action = "DecreaseFontSize" },
+    # { key = "NumpadSubtract", mods = "Control", action = "DecreaseFontSize" },
+
+    # Windows Only
+    # { key = "Enter", mods = "Alt", action = "ToggleFullscreen" },
+
+	# MacOS only
+    { key = "K", mods = "Command", mode = "~Vi|~Search", chars = "\u000c" },
+    { key = "K", mods = "Command", mode = "~Vi|~Search", action = "ClearHistory" },
+    { key = "0", mods = "Command", action = "ResetFontSize" },
+    { key = "=", mods = "Command", action = "IncreaseFontSize" },
+    { key = "+", mods = "Command", action = "IncreaseFontSize" },
+    { key = "NumpadAdd", mods = "Command", action = "IncreaseFontSize" },
+    { key = "-", mods = "Command", action = "DecreaseFontSize" },
+    { key = "NumpadSubtract", mods = "Command", action = "DecreaseFontSize" },
+    { key = "V", mods = "Command", mode = "~Vi", action = "Paste" },
+    { key = "V", mods = "Command", mode = "Vi|Search", action = "Paste" },
+    { key = "C", mods = "Command", action = "Copy" },
+    { key = "C", mods = "Command", mode = "Vi|~Search", action = "ClearSelection" },
+    { key = "H", mods = "Command", action = "Hide" },
+    { key = "H", mods = "Command|Alt", action = "HideOtherApplications" },
+    { key = "M", mods = "Command", action = "Minimize" },
+    { key = "Q", mods = "Command", action = "Quit" },
+    { key = "W", mods = "Command", action = "Quit" },
+    { key = "N", mods = "Command", action = "CreateNewWindow" },
+    { key = "T", mods = "Command", action = "CreateNewTab" },
+    { key = "F", mods = "Command|Control", action = "ToggleFullscreen" },
+    { key = "F", mods = "Command", mode = "~Search", action = "SearchForward" },
+    { key = "B", mods = "Command", mode = "~Search", action = "SearchBackward" },
+    { key = "]", mods = "Command|Shift", action = "SelectNextTab" },
+    { key = "[", mods = "Command|Shift", action = "SelectPreviousTab" },
+    { key = "Tab", mods = "Command", action = "SelectNextTab" },
+    { key = "Tab", mods = "Command|Shift", action = "SelectPreviousTab" },
+    { key = "1", mods = "Command", action = "SelectTab1" },
+    { key = "2", mods = "Command", action = "SelectTab2" },
+    { key = "3", mods = "Command", action = "SelectTab3" },
+    { key = "4", mods = "Command", action = "SelectTab4" },
+    { key = "5", mods = "Command", action = "SelectTab5" },
+    { key = "6", mods = "Command", action = "SelectTab6" },
+    { key = "7", mods = "Command", action = "SelectTab7" },
+    { key = "8", mods = "Command", action = "SelectTab8" },
+    { key = "9", mods = "Command", action = "SelectLastTab" }
+]
+
+[[hints.enabled]]
+command = "open" # On macOS
+# command = "xdg-open" # On Linux/BSD
+# command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding = { key = "O", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+
+[debug]
+render_timer = false
+persistent_logging = false
+log_level = "Warn"
+renderer =  "None"
+print_events = false
+highlight_damage = false
+prefer_egl =  false
