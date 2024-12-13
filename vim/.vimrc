@@ -23,10 +23,10 @@ set formatoptions+=B            " 不要自动格式化只包含单个标点符�
 
 " -- Theme -- "
 set background=dark             " 配色主题的色系,注意，这不是什么背景色！dark 是暗色系，light 是亮色系。 "
-colorscheme snazzy             " 配色主题的名称,:coloscheme 后键入<tab>可以自动补全 比较喜欢的desert,peachpuff,torte,elfload,slate "
+colorscheme snazzy              " 配色主题的名称,:coloscheme 后键入<tab>可以自动补全 比较喜欢的desert,peachpuff,torte,elfload,slate "
 
 " -- Show -- "
-set syntax on                   " 开启语法高亮 "
+syntax on                       " 开启语法高亮 "
 set number                      " 显示行号 "
 set ruler                       " 显示当前光标行号和列 "
 set wrap                        " 设置折行 set nowrap 为不折行 "
@@ -36,8 +36,8 @@ set showmode                    " 显示当前vim模式 "
 set showmatch                   " 显示匹配的括号 "
 set matchtime=1                 " 设置showmatch的效果时间，默认500ms，现在是100ms "
 set cursorline                  " 突出显示当前行 "
-set cursorcolumn                " 突出显示当前列 "
-set colorcolumn=80              " 设置某一列高亮 "
+" set cursorcolumn              " 突出显示当前列 "
+" set colorcolumn=80              " 设置某一列高亮 "
 
 
 " -- Search -- "
