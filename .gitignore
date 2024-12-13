@@ -1,8 +1,6 @@
-.DS_Store
-/**/.DS_Store
 /*
-/**/.git
-/nvim/.git
+**/.DS_Store
+**/.git
 !starship.toml
 !vim
 !htop
@@ -14,4 +12,5 @@
 !nvim
 !mc
 !zellij
-!.gitignore
+!/.gitignore
+
