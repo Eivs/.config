@@ -1,0 +1,19 @@
+# Don't print a new line at the start of the prompt
+add_newline = true
+
+# format = "$all"
+
+[character]
+# symbol = "❯"
+# success_symbol = "❯"
+# error_symbol = "❯"
+use_symbol_for_status = false
+
+[directory]
+truncation_length = 8
+truncate_to_repo = false
+style = "bold blue"
+
+[package]
+disabled = true
+
