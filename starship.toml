@@ -16,6 +16,16 @@
 # 在提示符之间插入空行
 add_newline = true
 
+[username]
+format="[$user]($style)"
+style_root="bold cyan"
+style_user="bold green"
+
+[hostname]
+format="[$ssh_symbol$hostname]($style):"
+style="bold green"
+ssh_symbol="@"
+
 [character]
 success_symbol = "[❯](purple)"
 error_symbol = "[❯](red)"
@@ -120,8 +130,8 @@ disabled = true
 symbol = " "
 disabled = true
 
-[hostname]
-ssh_symbol = " "
+#[hostname]
+#ssh_symbol = " "
 
 [java]
 symbol = " "
