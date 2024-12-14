@@ -14,4 +14,4 @@ nvim/.git
 !mc
 !zellij
 !/.gitignore
-
+!.zshrc
