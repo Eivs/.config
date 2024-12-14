@@ -1,98 +1,166 @@
 # 根据 schema 提供自动补全
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# format = """
+# $username\
+# $hostname\
+# $directory\
+# $git_branch\
+# $git_state\
+# $git_status\
+# $cmd_duration\
+# $line_break\
+# $python\
+# $character"""
+
 # 在提示符之间插入空行
 add_newline = true
 
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "bold yellow"
+
 [aws]
 symbol = "  "
+disabled = true
 
 [buf]
 symbol = " "
+disabled = true
 
 [c]
 symbol = " "
+disabled = true
 
 [conda]
 symbol = " "
+disabled = true
 
 [crystal]
 symbol = " "
+disabled = true
 
 [dart]
 symbol = " "
+disabled = true
 
 [directory]
 read_only = " 󰌾"
 
 [docker_context]
 symbol = " "
+disabled = true
 
 [elixir]
 symbol = " "
+disabled = true
 
 [elm]
 symbol = " "
+disabled = true
 
 [fennel]
 symbol = " "
+disabled = true
 
 [fossil_branch]
 symbol = " "
+disabled = true
 
 [git_branch]
 symbol = " "
+format = "[$branch(:$remote_branch)]($style)"
+style = "bright-black"
+
+[git_status]
+format = '(*[$all_status$ahead_behind]($style) )'
+style = "cyan"
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+up_to_date = ""
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "×"
+typechanged = ""
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\)'
+style = "bright-black"
 
 [git_commit]
 tag_symbol = '  '
 
 [golang]
 symbol = " "
+disabled = true
 
 [guix_shell]
 symbol = " "
+disabled = true
 
 [haskell]
 symbol = " "
+disabled = true
 
 [haxe]
 symbol = " "
+disabled = true
 
 [hg_branch]
 symbol = " "
+disabled = true
 
 [hostname]
 ssh_symbol = " "
 
 [java]
 symbol = " "
+disabled = true
 
 [julia]
 symbol = " "
+disabled = true
 
 [kotlin]
 symbol = " "
+disabled = true
 
 [lua]
 symbol = " "
+disabled = true
 
 [memory_usage]
 symbol = "󰍛 "
 
 [meson]
 symbol = "󰔷 "
+disabled = true
 
 [nim]
 symbol = "󰆥 "
+disabled = true
 
 [nix_shell]
 symbol = " "
+disabled = true
 
 [nodejs]
 symbol = " "
+disabled = true
 
 [ocaml]
 symbol = " "
+disabled = true
 
 [os.symbols]
 Alpaquita = " "
@@ -141,36 +209,48 @@ Windows = "󰍲 "
 
 [package]
 symbol = "󰏗 "
+disabled = true
 
 [perl]
 symbol = " "
+disabled = true
 
 [php]
 symbol = " "
+disabled = true
 
 [pijul_channel]
 symbol = " "
+disabled = true
 
 [python]
 symbol = " "
+disabled = true
 
 [rlang]
 symbol = "󰟔 "
+disabled = true
 
 [ruby]
 symbol = " "
+disabled = true
 
 [rust]
 symbol = "󱘗 "
+disabled = true
 
 [scala]
 symbol = " "
+disabled = true
 
 [swift]
 symbol = " "
+disabled = true
 
 [zig]
 symbol = " "
+disabled = true
 
 [gradle]
 symbol = " "
+disabled = true
