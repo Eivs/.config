@@ -32,7 +32,7 @@ error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [directory]
-truncation_length = 100
+truncation_length = 0
 truncate_to_repo = false
 truncation_symbol = ""
 #before_repo_root_style
@@ -51,11 +51,11 @@ style = "bold yellow"
 
 [git_branch]
 symbol = " "
-format = "$symbol[$branch(:$remote_branch)]($style)"
+format = "[$symbol](dimmed white)[$branch(:$remote_branch) ]($style)"
 style = "bright-black"
 
 [git_status]
-format = '(\[[$all_status$ahead_behind]($style)\])'
+format = '[\[](dimmed white)([$all_status$ahead_behind]($style))[\]](dimmed white)'
 style = "red"
 conflicted = "="
 ahead = "⇡"
