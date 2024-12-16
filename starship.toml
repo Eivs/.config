@@ -47,7 +47,7 @@ use_os_path_sep = true
 
 [cmd_duration]
 format = "[$duration]($style) "
-style = "bold yellow"
+style = "yellow"
 
 [git_branch]
 symbol = " "
@@ -55,8 +55,8 @@ format = "[$symbol](dimmed white)[$branch(:$remote_branch) ]($style)"
 style = "bright-black"
 
 [git_status]
-format = '[\[](dimmed white)([$all_status$ahead_behind]($style))[\]](dimmed white)'
-style = "red"
+format = '([\[[$all_status](red)$ahead_behind\]]($style) )'
+style = "dimmed white"
 conflicted = "="
 ahead = "⇡"
 behind = "⇣"
