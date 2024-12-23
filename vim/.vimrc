@@ -80,3 +80,6 @@ set mouse=a                     " 启用鼠标 "
 set foldlevelstart=99           " 默认不折叠 "
 set foldmethod=indent           " 按照缩紧折叠 "
 
+let g:lightline = {
+    \ 'colorscheme': 'one'
+    \ }

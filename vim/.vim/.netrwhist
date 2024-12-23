@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/elvis/workspace/pitrix-webconsole'
+let g:netrw_dirhist_7='/Users/elvis/.config/tmux'
+let g:netrw_dirhist_6='/Users/elvis/workspace/pitrix-webconsole'
+let g:netrw_dirhist_5='/Users/elvis/workspace/pitrix-webconsole/src/mysite/apps/account'
+let g:netrw_dirhist_4='/Users/elvis/workspace/pitrix-webconsole/src/mysite/apps'
+let g:netrw_dirhist_3='/Users/elvis/workspace/pitrix-webconsole/src/mysite'
+let g:netrw_dirhist_2='/Users/elvis/workspace/pitrix-webconsole/src'
+let g:netrw_dirhist_1='/Users/elvis/workspace/pitrix-webconsole'
