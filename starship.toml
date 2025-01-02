@@ -85,6 +85,10 @@ disabled = true
 symbol = " "
 disabled = true
 
+[bun]
+symbol = "🥟"
+disabled = true
+
 [c]
 symbol = " "
 disabled = true
