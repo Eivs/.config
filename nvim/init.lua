@@ -25,8 +25,8 @@ if vim.g.neovide then
   vim.g.neovide_window_blurred = true
 
   -- 浮动窗口的模糊半径
-  vim.g.neovide_floating_blur_amount_x = 0.1
-  vim.g.neovide_floating_blur_amount_y = 0.1
+  vim.g.neovide_floating_blur_amount_x = 2.0
+  vim.g.neovide_floating_blur_amount_y = 2.0
 
   -- 浮动窗口的阴影效果
   vim.g.neovide_floating_shadow = true
@@ -35,8 +35,8 @@ if vim.g.neovide then
   vim.g.neovide_light_radius = 5
 
   -- 窗口透明度
-  vim.g.transparency = 0.4
-  vim.g.neovide_transparency = 0.4
+  vim.g.transparency = 0.8
+  vim.g.neovide_transparency = 0.8
   local alpha = function()
     return string.format("%x", math.floor(255 * vim.g.neovide_transparency or 0.8))
   end
