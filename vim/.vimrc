@@ -9,7 +9,6 @@ filetype on                     " 开启文件类型检测 "
 filetype plugin on              " 开启插件的支持 "
 filetype indent on              " 开启文件类型相应的缩进规则 "
 
-
 " -- Encoding -- "
 set encoding=utf-8              " 打开文件时编码格式 "
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1   " vim会根据该设置识别文件编码 "
@@ -38,7 +37,7 @@ set matchtime=1                 " 设置showmatch的效果时间，默认500ms�
 set cursorline                  " 突出显示当前行 "
 " set cursorcolumn              " 突出显示当前列 "
 " set colorcolumn=80              " 设置某一列高亮 "
-
+set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:
 
 " -- Search -- "
 set smartcase                   " 搜索时，如果输入大写，则严格按照大小写搜索，如果小写，并设置了ignorecase，则忽略大小写 "
