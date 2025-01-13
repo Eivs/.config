@@ -66,7 +66,6 @@ hi! link ShowMarksHLu DiffChange
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 set laststatus=2                " 底部显示两行状态栏 "
 
-
 " -- Select & Complete -- "
 set selection=inclusive         " 选择文本事，光标所在位置也会被选中 "
 set selectmode=mouse,key
