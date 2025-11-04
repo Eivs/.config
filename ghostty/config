@@ -1,0 +1,72 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   ~/Library/Application Support/com.mitchellh.ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+auto-update-channel = tip
+
+term=xterm-256color
+
+font-size = 15
+font-family = "RobotoMono Nerd Font"
+font-family-bold = "RobotoMono Nerd Font Bd"
+font-family-italic = "RobotoMono Nerd Font It"
+font-family-bold-italic = "RobotoMono Nerd Font Bd It"
+font-thicken = true
+font-thicken-strength = 255
+faint-opacity = 0.8
+bold-is-bright= true
+custom-shader-animation = true
+alpha-blending = native
+
+theme = snazzy
+cursor-style = bar
+cursor-style-blink = true
+
+
+background-opacity = 0.92
+background-blur = true
+unfocused-split-opacity = 0.8
+
+window-theme = auto
+window-colorspace = display-p3
+window-padding-balance = true
+window-padding-x = 1
+window-padding-y = 0
+
+resize-overlay = always
+resize-overlay-position = center
+
+clipboard-read = allow
+clipboard-write = allow
+
+custom-shader-animation = true
+macos-window-shadow = true
+macos-option-as-alt = true
+macos-icon = official
+macos-titlebar-style = transparent
+
+shell-integration = zsh
+confirm-close-surface = true
+
+quick-terminal-animation-duration = 0.08
+keybind = super+i=inspector:toggle
+keybind = super+r=reload_config
+
+# Some shaders can be found in this repo, they're usually uploaded to discord
+# https://github.com/hackrmomo/ghostty-shaders
+
+custom-shader = shaders/cursor_blaze.glsl
+custom-shader = shaders/cursor_smear.glsl
