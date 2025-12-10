@@ -5,6 +5,23 @@
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
 
+# custom settings
+
+# By default, tmux will number panes and windows starting from 0. I find indexing things from 1 to be more ergonomic, especially when you want to quickly switch between windows.
+set -g base-index 1
+setw -g pane-base-index 1
+
+
+# By default, after you delete a window tmux will remember the previous index of the other windows. Why? I dunno, but this gets rid of it.
+set -g renumber-windows on
+
+# Focus events enabled for terminals that support them
+set -g focus-events on
+
+# Use Ctrl-a \ to open a vertical split (it’s the same key with the | symbol). Use Ctrl-a - to open a horizontal split.
+bind '\' split-window -h -c '#{pane_current_path}'
+bind - split-window -v -c '#{pane_current_path}'
+
 # -- bindings ------------------------------------------------------------------
 
 # preserve tmux stock bindings,
@@ -383,7 +400,7 @@ tmux_conf_urlscan_options="--compact --dedupe"
 #set -g history-limit 10000
 
 # start with mouse mode enabled
-#set -g mouse on
+set -g mouse on
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual

@@ -3,7 +3,7 @@
 # This template file has been automatically created at the following
 # path since Ghostty couldn't find any existing config files on your system:
 #
-#   ~/Library/Application Support/com.mitchellh.ghostty/config
+# ~/Library/Application Support/com.mitchellh.ghostty/config
 #
 # The template does not set any default options, since Ghostty ships
 # with sensible defaults for all options. Users should only need to set
@@ -15,58 +15,99 @@
 # Additionally, each config option is also explained in detail
 # on Ghostty's website, at https://ghostty.org/docs/config.
 
-auto-update-channel = tip
+# ──────────────────────────────────────────────────────────────
+# General
+# ──────────────────────────────────────────────────────────────
+term                        = xterm-256color
+shell-integration           = zsh
+auto-update-channel         = tip
+confirm-close-surface       = true
+quick-terminal-screen       = macos-menu-bar
+# selection-clear-on-copy   = true
+# search-hide-on-scroll-end = true
+# scrollback-multiplier     = 5
+selection-clear-on-typing = true
 
-term=xterm-256color
-
-font-size = 15
-font-family = "RobotoMono Nerd Font"
-font-family-bold = "RobotoMono Nerd Font Bd"
-font-family-italic = "RobotoMono Nerd Font It"
-font-family-bold-italic = "RobotoMono Nerd Font Bd It"
-font-thicken = true
-font-thicken-strength = 255
-faint-opacity = 0.8
-bold-is-bright= true
-custom-shader-animation = true
-alpha-blending = native
-
-theme = snazzy
-cursor-style = bar
-cursor-style-blink = true
+# ──────────────────────────────────────────────────────────────
+# Fonts
+# ──────────────────────────────────────────────────────────────
+font-family            = "RobotoMono Nerd Font Mono"
 
 
-background-opacity = 0.92
-background-blur = true
-unfocused-split-opacity = 0.8
+font-synthetic-style = false
+font-size              = 15
+font-thicken           = true
+font-thicken-strength  = 255
+faint-opacity          = 0.5
+bold-color             = bright
+font-feature           = feat
 
-window-theme = auto
-window-colorspace = display-p3
+# ──────────────────────────────────────────────────────────────
+# Appearance
+# ──────────────────────────────────────────────────────────────
+
+theme                  = snazzy
+window-theme           = auto
+window-colorspace      = display-p3
+
+background-opacity     = 0.92
+background-blur        = true
+alpha-blending         = native
+
+unfocused-split-opacity= 0.90
+split-divider-color    = #3F4149
+# dim-unfocused = true
+
+window-padding-x       = 4
+window-padding-y       = 4
 window-padding-balance = true
-window-padding-x = 1
-window-padding-y = 0
 
-resize-overlay = always
-resize-overlay-position = center
+window-decoration      = auto
+macos-titlebar-style   = tabs
+macos-window-shadow    = true
+macos-icon             = official
+macos-option-as-alt    = true
+macos-non-native-fullscreen = true
+macos-titlebar-proxy-icon = visible
 
+scrollbar              = never
+window-vsync           = true
+resize-overlay         = always
+resize-overlay-position= center
+quick-terminal-animation-duration = 0.08
+
+# ──────────────────────────────────────────────────────────────
+# Cursor
+# ──────────────────────────────────────────────────────────────
+cursor-style           = bar
+cursor-style-blink     = true
+
+# ──────────────────────────────────────────────────────────────
+# Clipboard
+# ──────────────────────────────────────────────────────────────
 clipboard-read = allow
 clipboard-write = allow
-
-custom-shader-animation = true
-macos-window-shadow = true
-macos-option-as-alt = true
-macos-icon = official
-macos-titlebar-style = transparent
-
-shell-integration = zsh
 confirm-close-surface = true
+# clipboard-read = ask
 
-quick-terminal-animation-duration = 0.08
+# ──────────────────────────────────────────────────────────────
+# Mouse
+# ──────────────────────────────────────────────────────────────
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 3
+
+# ──────────────────────────────────────────────────────────────
+# Key bindings
+# ──────────────────────────────────────────────────────────────
+
 keybind = super+i=inspector:toggle
 keybind = super+r=reload_config
 
+# ──────────────────────────────────────────────────────────────
+# Shaders
+# ──────────────────────────────────────────────────────────────
 # Some shaders can be found in this repo, they're usually uploaded to discord
 # https://github.com/hackrmomo/ghostty-shaders
-
+custom-shader-animation = true
 custom-shader = shaders/cursor_blaze.glsl
 custom-shader = shaders/cursor_smear.glsl
