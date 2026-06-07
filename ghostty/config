@@ -102,6 +102,7 @@ mouse-scroll-multiplier = 3
 
 keybind = super+i=inspector:toggle
 keybind = super+r=reload_config
+keybind = super+v=paste_from_clipboard
 
 # ──────────────────────────────────────────────────────────────
 # Shaders
