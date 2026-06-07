@@ -44,3 +44,8 @@
 ### k8s 工具
 - k9s k8s 集群管理工具
 - lazydocker 容器管理工具
+
+```bash
+apt update
+apt install vim curl wget git tmux zip net-tools dnsutils iputils-ping traceroute tcpdump telnet mtr lsof rsync jq tree sysstat iotop iftop btm htop
+```
