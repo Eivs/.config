@@ -1,87 +1,149 @@
-" -- General -- "
-set nocompatible                " 使用 VIM 键盘模式 "
-set history=2000                " 记录 Vim 历史操作的条数 "
+" ==================== 基础设置 ====================
+" 关闭 Vi 兼容模式，让 Vim 使用完整功能
+set nocompatible
 
-set tm=500                      " 设置超时时间 "
-set t_Co=256                    " 使用 256 色模式 "
+" 编码设置（推荐 UTF-8）
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencoding=utf-8
+set termencoding=utf-8
+set fileformat=unix
 
-filetype on                     " 开启文件类型检测 "
-filetype plugin on              " 开启插件的支持 "
-filetype indent on              " 开启文件类型相应的缩进规则 "
+" 启用真彩色支持（Ghostty 等现代终端强烈推荐）
+set termguicolors
+set t_Co=256
 
+" 启用文件类型检测、插件和缩进
+filetype plugin indent on
+" 开启语法高亮
+syntax on
 
-" -- Encoding -- "
-set encoding=utf-8              " 打开文件时编码格式 "
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1   " vim会根据该设置识别文件编码 "
+" ==================== 常规行为 ====================
+" 历史记录条数
+set history=2000
+" 等待按键时间（影响映射延迟）
+set updatetime=500
+" 光标上下保留的最少行数
+set scrolloff=5
+" 允许 Backspace 删除缩进、行首、行尾内容
+set backspace=2
 
-set fileformat=unix             " 设置以unix的格式保存文件 "
-set fileencoding=utf-8          " 在保存文件时，指定编码 "
-set termencoding=utf-8          " 终端环境告诉vim使用编码 "
-set ffs=unix,dos,mac            " 在创建文件或写入时，这三种文件格式分别决定了行末要添加什么特殊字符，而在读入文件时，又分别决定了要从行末移去什么特殊字符。 "
-set formatoptions+=m            " 允许自动将多段落的注释格式化为一个段落 "
-set formatoptions+=B            " 不要自动格式化只包含单个标点符号的段落 "
+" 鼠标支持：normal + visual 模式下可用
+" 这是鼠标选择文本的关键设置
+set mouse=nv
 
-" -- Theme -- "
-set background=dark             " 配色主题的色系,注意，这不是什么背景色！dark 是暗色系，light 是亮色系。 "
-colorscheme snazzy              " 配色主题的名称,:coloscheme 后键入<tab>可以自动补全 比较喜欢的desert,peachpuff,torte,elfload,slate "
+" 选择时包含光标下的字符（更符合直觉）
+set selection=inclusive
+" 进入选择模式
+" set selectmode=mouse,key
 
-" -- Show -- "
-syntax on                       " 开启语法高亮 "
-set number                      " 显示行号 "
-set ruler                       " 显示当前光标行号和列 "
-set wrap                        " 设置折行 set nowrap 为不折行 "
-set sidescroll=1                " 默认设置set sidescroll=0 之下，当光标到达屏幕边缘时，将自动扩展显示1/2屏幕的文本。通过使用 set sidescroll=1 设置，可以实现更加平滑的逐个字符扩展显示 "
-set showcmd                     " 在屏幕右下角显示未完成的命令 "
-set showmode                    " 显示当前vim模式 "
-set showmatch                   " 显示匹配的括号 "
-set matchtime=1                 " 设置showmatch的效果时间，默认500ms，现在是100ms "
-set cursorline                  " 突出显示当前行 "
-" set cursorcolumn              " 突出显示当前列 "
-" set colorcolumn=80              " 设置某一列高亮 "
-set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+" 剪贴板设置：使用系统剪贴板（macOS 下强烈推荐）
+" unnamedplus 表示 + 寄存器（系统剪贴板）
+set clipboard=unnamedplus
 
-" -- Search -- "
-set smartcase                   " 搜索时，如果输入大写，则严格按照大小写搜索，如果小写，并设置了ignorecase，则忽略大小写 "
-set ignorecase                  " 搜索时忽略大小写 "
-set incsearch                   " 搜索时及时匹配搜索内容，需要回车确认 "
-set hlsearch                    " 高亮搜索项 "
+" ==================== 显示与搜索 ====================
+" 显示行号 + 相对行号
+set number relativenumber
+" 高亮当前行
+set cursorline
+" 自动换行
+set wrap
+" 水平滚动时一次滚动的字符数
+set sidescroll=1
 
-" -- Tab -- "
-set expandtab                   " 将<tab>符号转变为<space>空格 "
-set smarttab                    " 配合shiftwidth使用，如果设置该值，在行首键入<tab>会填充shiftwidth的数值,其他地方使用tabstop的数值，不设置的话，所有地方都是用shiftwidth数值 "
+" 右下角显示当前命令
+set showcmd
+" 显示当前模式（插入/可视等）
+set showmode
+" 高亮匹配的括号
+set showmatch
+set matchtime=1
 
-" -- Indent -- "
-set autoindent                  " 换行自动缩进 "
-set smartindent                 " 缩进采用c语言风格 "
-set shiftround                  " 在一般模式下键入>>整个缩进shiftwidth的长度，<<反向操作,== 可以与上一行对齐，插入模式下C-T和C-D也可以左右启动 "
-set shiftwidth=4                " 缩进的空格数 "
-set tabstop=4                   " 键入<tab>的步长 "
-set softtabstop=4               " insert mode tab and backspace use 4 spaces "
+" 显示标尺（右下角显示行列信息）
+set ruler
+" 始终显示状态栏
+set laststatus=2
 
-" -- Set Mark Column Color -- "
-hi! link SignColumn   LineNr
-hi! link ShowMarksHLl DiffAdd
-hi! link ShowMarksHLu DiffChange
+" 搜索设置
+set incsearch       " 实时搜索
+set hlsearch        " 高亮搜索结果
+set ignorecase      " 忽略大小写
+set smartcase       " 智能大小写（有大写字母时区分大小写）
 
-" -- Status Line -- "
-set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
-set laststatus=2                " 底部显示两行状态栏 "
+" 双击 Esc 取消搜索高亮
+nnoremap <Esc><Esc> :nohlsearch<CR>
 
+" ==================== 缩进与 Tab ====================
+" 使用空格代替 Tab
+set expandtab
+set smarttab
 
-" -- Select & Complete -- "
-set selection=inclusive         " 选择文本事，光标所在位置也会被选中 "
-set selectmode=mouse,key
+" 缩进宽度设置（4 个空格）
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 
-set scrolloff=5                 " 距离顶部和底部5行 "
-set backspace=2                 " 任何情况允许使用退格键删除 "
-set mouse=a                     " 启用鼠标 "
+" 自动缩进和智能缩进
+set autoindent
+set smartindent
+" 缩进取整（例如 >> 时对齐到 shiftwidth）
+set shiftround
 
-" -- Code Folding -- "
-set foldlevelstart=99           " 默认不折叠 "
-set foldmethod=indent           " 按照缩紧折叠 "
+" ==================== 主题 ====================
+set background=dark
+colorscheme snazzy
 
+" ==================== 其他增强功能 ====================
+" 代码折叠（按缩进折叠）
+set foldmethod=indent
+" 默认不折叠（99 层）
+set foldlevelstart=99
 
+" 撤销记录持久化
+set undofile
+set undodir=~/.vim/undo
 
+" 关闭备份和交换文件
+set nobackup
+set nowritebackup
+set noswapfile
+" set directory=~/.vim/swap//
+
+" Netrw（内置文件浏览器）设置
+let g:netrw_liststyle = 3      " 使用树状目录视图
+let g:netrw_browse_split = 4   " 在上一个窗口打开文件
+let g:netrw_winsize = 20       " 宽度为 20%
+
+" ==================== 快捷键 ====================
+" 快速保存
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>
+
+" 快速退出
+nnoremap <C-q> :q<CR>
+
+" Alt + j/k 移动当前行（或选中的行）
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" ==================== 鼠标选择优化 ====================
+" 鼠标左键松开时，自动把选中的内容复制到系统剪贴板
+vnoremap <LeftRelease> "+ygv
+nnoremap <LeftRelease> "+y
+
+" ==================== y 操作始终使用系统剪贴板（推荐） ====================
+" 让普通的 y（复制）、yy、Y 等操作都直接进入系统剪贴板
+nnoremap y "+y
+xnoremap y "+y
+vnoremap y "+y
+nnoremap yy "+yy
+nnoremap Y "+y$
+
+" ==================== Lightline 状态栏 ====================
 let g:lightline = {
     \ 'colorscheme': 'snazzy'
     \ }
