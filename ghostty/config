@@ -18,29 +18,33 @@
 # ──────────────────────────────────────────────────────────────
 # General
 # ──────────────────────────────────────────────────────────────
-term                        = xterm-256color
-shell-integration           = zsh
 auto-update-channel         = tip
+term                        = xterm-256color
+shell-integration           = detect
 confirm-close-surface       = true
 quick-terminal-screen       = macos-menu-bar
-# selection-clear-on-copy   = true
+selection-clear-on-copy     = false
 # search-hide-on-scroll-end = true
 # scrollback-multiplier     = 5
-selection-clear-on-typing = true
+selection-clear-on-typing   = true
+mouse-shift-capture         = true
+cursor-click-to-move        = true
+right-click-action          = context-menu
+copy-on-select              = false
 
 # ──────────────────────────────────────────────────────────────
 # Fonts
 # ──────────────────────────────────────────────────────────────
 font-family            = "RobotoMono Nerd Font Mono"
-
-
+font-family            = "PingFang SC"
 font-synthetic-style = false
-font-size              = 15
+font-size              = 16
 font-thicken           = true
 font-thicken-strength  = 255
 faint-opacity          = 0.5
 bold-color             = bright
-font-feature           = feat
+font-feature           = liga
+adjust-cell-height     = 0
 
 # ──────────────────────────────────────────────────────────────
 # Appearance
@@ -58,8 +62,8 @@ unfocused-split-opacity= 0.90
 split-divider-color    = #3F4149
 # dim-unfocused = true
 
-window-padding-x       = 4
-window-padding-y       = 4
+window-padding-x       = 8
+window-padding-y       = 8
 window-padding-balance = true
 
 window-decoration      = auto
@@ -87,7 +91,6 @@ cursor-style-blink     = true
 # ──────────────────────────────────────────────────────────────
 clipboard-read = allow
 clipboard-write = allow
-confirm-close-surface = true
 # clipboard-read = ask
 
 # ──────────────────────────────────────────────────────────────
