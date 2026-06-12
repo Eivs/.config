@@ -47,5 +47,5 @@
 
 ```bash
 apt update
-apt install zsh vim curl wget ripgrep fd-find screen bat git tmux zip net-tools dnsutils iputils-ping traceroute tcpdump telnet mtr lsof rsync jq tree sysstat iotop iftop btm htop
+apt install zsh vim curl wget ripgrep fd-find screen bat git tmux zip net-tools dnsutils iputils-ping traceroute tcpdump telnet mtr lsof rsync jq tree sysstat iotop iftop htop
 ```
